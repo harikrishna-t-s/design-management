@@ -1,0 +1,199 @@
+# Project: Personal Design Management System
+
+## 1. Project Overview
+
+Develop a command-line-based Design Management System using Python and MySQL.
+
+The application will be used by a freelance designer to manage client companies and their associated design projects. It is intended for personal use by a single administrator (the founder).
+
+Keep the application simple, lightweight, maintainable and suitable for an academic project. Avoid unnecessary frameworks, complex abstractions and overengineering.
+
+## 2. Technology Stack
+
+- Backend: Python
+- Database: MySQL
+- Database connectivity: mysql-connector-python
+- Interface: Terminal-based CLI
+- Navigation: Arrow-key-based interactive menus
+- Target environment: Windows laptop
+
+Use only essential external Python libraries.
+
+## 3. Application Structure and Operations
+
+The application should have two primary sections: Company Management and Work Management.
+
+### A. Company Management
+
+Implement the following operations:
+
+1. **Add Company**
+   - Automatically generate a unique company ID.
+   - Company name.
+   - Owner name.
+   - Company domain(s).
+   - Contact person's name.
+   - Final approval person's name and contact details.
+
+2. **Update Company**
+   - Search and select an existing company.
+   - Modify its stored information.
+
+3. **Search Company**
+   - Search using company name, domain or owner name.
+   - Selecting a company should open its associated Work Management menu.
+
+4. **Display All Companies**
+   - Display company name, owner, domain and final approval person.
+
+5. **Delete Company**
+   - Archive the company instead of permanently deleting it.
+   - Preserve all associated work records.
+   - Require confirmation before deletion.
+
+6. **Retrieve Archived Company**
+   - Search archived companies by name.
+   - Restore the selected company along with its associated work records.
+
+### B. Work Management
+
+Every work record must be associated with a company using its unique company ID.
+
+Implement the following operations:
+
+1. **Add Work**
+   - Automatically generate a unique work ID.
+   - Work type (logo, banner, poster, social media design, etc.).
+   - Colour theme.
+   - Assigned deadline.
+   - Estimated completion time.
+   - Work description.
+   - Work status (Pending, In Progress, Completed).
+
+2. **Update Work**
+   - Search and select a work record.
+   - Modify its details and status.
+
+3. **Search Work**
+   - Search using work type or deadline.
+   - Support useful date-based filtering.
+
+4. **Display Works**
+   - Display all works associated with the selected company.
+   - Provide an option to display works across all active companies.
+
+5. **Delete Work**
+   - Delete a specific work using its work ID.
+   - Require confirmation before deletion.
+
+6. **Return to Company Menu**
+   - Navigate back to Company Management.
+
+## 4. CLI Interface and Navigation
+
+- Use a clean, minimal terminal interface.
+- Implement interactive arrow-key navigation instead of requiring users to enter menu numbers.
+- Use Enter to select an option.
+- Use Esc or an appropriate navigation option to return to the previous menu.
+- Highlight the currently selected menu item.
+- Ensure keyboard navigation works correctly on Windows.
+- Handle invalid inputs and unexpected keyboard actions gracefully.
+
+Initially, display the main menu with:
+- Company Management
+- Work Management
+- Exit Application
+
+When entering Work Management directly, allow the user to select a company before accessing its associated work records.
+
+## 5. Database Management
+
+The Python application must connect to a locally installed MySQL server.
+
+Implement automatic database initialization:
+
+- If the database does not exist, create it.
+- If the database exists but some tables are missing, create the missing tables.
+- If all required tables exist, use them without resetting existing data.
+- Never drop or overwrite existing records during initialization.
+
+Use appropriate primary keys, foreign keys, constraints and indexes.
+
+Implement proper relationships between companies, works and archived records.
+
+Company deletion must use a recoverable soft-deletion mechanism. Restoring a company must also restore its associated work records.
+
+Keep database credentials configurable rather than hardcoding them into application logic.
+
+## 6. Backup and Recovery
+
+- Automatically create a database backup in the same directory as the Python application.
+- Provide a manual backup option.
+- Use timestamped SQL backup files.
+- Avoid overwriting previous backups.
+- Provide a recovery mechanism using an existing backup file.
+- Handle backup and restoration errors gracefully.
+
+## 7. Error Handling and Data Validation
+
+Implement appropriate validation for:
+- Mandatory fields.
+- Duplicate company records where applicable.
+- Invalid contact details.
+- Incorrect date formats.
+- Past deadlines where inappropriate.
+- Invalid work status values.
+- Missing or invalid company/work IDs.
+- Database connection failures.
+
+Display meaningful error messages instead of exposing raw Python exceptions to the user.
+
+Use parameterized SQL queries throughout the application.
+
+## 8. Required Deliverables
+
+Generate the following three files:
+
+**1. `main.py`**
+- Complete, executable application.
+- All application logic in a single Python file.
+- No inline comments.
+- Clean and understandable function organization.
+
+**2. `main_documented.py`**
+- Complete copy of the application.
+- Include explanatory comments and function documentation.
+- Maintain identical functionality to `main.py`.
+
+**3. `README.md`**
+
+Generate comprehensive documentation covering:
+
+- Project overview and objectives.
+- Features and application workflow.
+- Technology stack.
+- System architecture.
+- Complete installation instructions for a fresh Windows laptop.
+- Python and MySQL installation and configuration.
+- Required Python dependencies.
+- Database initialization and connection configuration.
+- MySQL database and table schemas.
+- Relationships between tables.
+- Explanation of every user-defined function and its purpose.
+- Frequently used Python built-in functions and libraries used in the project.
+- Instructions for running the application.
+- Backup and recovery procedures.
+- Common errors and troubleshooting.
+
+## 9. Development Constraints
+
+- Generate the complete working application, not pseudocode or partial implementations.
+- Keep the implementation within a single Python application file.
+- Avoid unnecessary classes, design patterns and external frameworks.
+- Do not introduce a graphical interface or web application.
+- Maintain consistency between the application code, documented code and README.
+- Ensure all database operations work correctly.
+- Ensure that existing data is preserved during application restarts and database initialization.
+- Test the major application workflows logically, including adding, updating, searching, archiving and restoring companies and managing associated works.
+
+The final output must contain all three complete files, with no omitted functions or placeholder implementations.

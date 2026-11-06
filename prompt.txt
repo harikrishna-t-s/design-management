@@ -1,0 +1,40 @@
+what am i doing : {
+  - i want to do a project as a part of my school academic subject
+  - the project will be based on python and mysql
+  - the project will be a cli based application
+  - the topic which i have chosen for the project is as follows : {
+    - i am thinking of developing a design management system
+    - by the application i could track and manage all the design works that i do as a freelancer
+    - the project will be only used by me as the founder of my design company
+    - operations that should be there in this project would be as follows : {
+      - ADD COMPANY : auto assigned company id, add company name, company owner name, company domains, contact person, contact deatils of the final approval
+      - UPDATE COMPANY DETAILS : change company company details which was once added
+      - SEARCH COMPANY : based on the domain or name or the owner of the company. once we choose a company, it should redirect to the work menu
+      - DISPLAY ALL COMPANIES : display the following details of all the companies present in the database - {company name, owner name, domain, final approval person}
+      - DELETE COMPANY : delete the company details based on the name of the company
+      - RETRIEVE COMPANY : retrieve company details from the archived storage based on the company name
+      - EXIT FROM APPLICATION : exit from the application
+      - ADD WORK : auto assigned work id, add type of work(logo, banner, poster, etc), color theme of the work, deadline, approximate time of work completition, work description, work status
+      - UPDATE WORK DETAILS : update the details of a particular work
+      - SEARCH WORK : search the work based on deadline and type of work
+      - DISPLAY WORK : display the all details of all the works
+      - DELETE WORK : delete a spcific work based on work id
+      - EXIT TO COMPANY MENU : in the work menu, while chosing this option would redirect to the company menu
+    }
+  }
+  - i want the project to be based on python backend, mysql database. the python backend will be connected to the mysql local server in my own laptop
+  - while initializing the backend, if the tables and database for this application is not present, auto initialize the database and tables. if it is partially present then completely initialize the database. if it is fully present then use it.
+  - for all the deletion of company, keep those details in an archieved storage for future recovery if required
+  - keep the backup of the database as a file in the same folder where the python code is being stored
+  - initially the user would be given with an option to choose between work menu and company menu
+  - in the menu, i am thinking of choosing the option based on arrows rather than going with a usual choice based approach
+}
+
+what i want you to : {
+  - generate a single file python code for the whole application
+  - make sure that all the operations are correct and if any additional operation could benefit the working of the application then add that also to the application
+  - also generate another detailed README file which has all the information about the project including, the working, installation and running in a windows laptop without any of the components present in it, mysql tables schemas, architecture of the project, all the user defined functions and thier details, all thr frequently used built in functions
+  - do not over engineer the application
+  - maintain simplicity and minimal cli for the application
+  - make sure that code has no comments in it and instead generate another file comtaining the full code and comments to all the functions
+}
